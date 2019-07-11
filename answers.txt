@@ -1,0 +1,12 @@
+1. tx.origin give the original sender of a transaction instead of  immediate sender.So,if a attacker really a victim transaction then it is difficult to determine if transaction was originated by a trusted party or not.
+
+2. ABI,The Application Binary Interface is a data encoding scheme used in Ethereum smart contract.
+	It determines details as how functions are called and in which binary format information should be passed from one program component to the next.
+
+3.STATICCALL is used for view functions which enforces the state to stay unmodified as part of the EVM execution.In remix ide we can only see the view function result beside the function call.
+
+4.assert use for internal error  like-overflow/underflow .But require use for malformed input like -user inputs.
+  assert(false) compiles to 0xfe, which is an invalid opcode, using up all remaining gas, and reverting all changes.But require(false) compiles to 0xfd which is the REVERT opcode, meaning it will refund the remaining gas.
+
+5.checksum address supposes to help reduce the chance of sending tokens to a wrong address. The address is compared against the raw binary keccak-256 hash of the address bytes, and where there are letters in the same corresponding place as a "1" bit, the letter is capitalized.checksum validation is a way to tell if an address is valid and doesn't contain any typos.
+
